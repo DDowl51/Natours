@@ -29,7 +29,7 @@ const handleExpireTokenJWT = () =>
   new AppError('Your token has expired! Please login again.', 401);
 
 const sendErrorDev = (err, req, res) => {
-  console.error(err);
+  // console.error(err);
   // A) API
   if (req.originalUrl.startsWith('/api')) {
     return res.status(err.statusCode).json({

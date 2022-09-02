@@ -232,7 +232,7 @@ exports.searchTour = catchAsync(async (req, res, next) => {
   //   .limitFields()
   //   .pagination();
   // const docs = await features.query;
-  console.log(search);
+  // console.log(search);
 
   // 特定字符串搜索
   const docs = await Tour.find({

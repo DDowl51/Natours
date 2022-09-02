@@ -15,7 +15,6 @@ exports.getOverview = catchAsync(async (req, res, next) => {
   let { search } = req.query;
   if (search) {
     search = search.replaceAll('+', ' ');
-    console.log(search);
     toursQuery = toursQuery.find({
       $or: [
         {
@@ -60,7 +59,6 @@ exports.getTour = catchAsync(async (req, res, next) => {
 
   if (!tour) return next(new AppError('There is no tour with that name.', 404));
 
-  // console.log(tour);
   // 2) Build template
 
   // 3) Render template using the data from 1)

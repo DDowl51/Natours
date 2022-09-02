@@ -7,6 +7,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp'); // HTTP parameters polution
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
@@ -63,6 +64,8 @@ app.use(
     ],
   })
 );
+
+app.use(compression());
 
 // Limit request from same api
 const limiter = rateLimit({
