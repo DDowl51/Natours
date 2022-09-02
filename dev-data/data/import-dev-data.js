@@ -12,8 +12,6 @@ const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
   process.env.DATABASE_PASSWORD
 );
-// const DB =
-//   'mongodb+srv://ddowl:aF-4jj7GeZZdj7f@cluster0.jrhhu3f.mongodb.net/natours?retryWrites=true&w=majority';
 // Connect to database
 mongoose
   .connect(DB, {
