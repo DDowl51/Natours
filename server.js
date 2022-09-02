@@ -19,8 +19,6 @@ const DB = process.env.DATABASE.replace(
 // Connect to database
 mongoose.connect(DB).then(() => console.log('DB connection successful!'));
 
-// 会自动创建一个复数形式的collections名字，基于model的名字(Tour => tours)
-
 // console.log(process.env);
 const port = process.env.PORT || 3000;
 // Start a server
