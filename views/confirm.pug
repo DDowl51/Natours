@@ -1,0 +1,9 @@
+extends base
+
+block content 
+  main.main
+    .message--confirm-account
+      .message_title
+        h2.heading-secondary= title
+      .message_msg= msg
+      .token(data-token=`${token}`)

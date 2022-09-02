@@ -1,0 +1,21 @@
+//- 扩展base.pug文件的内容
+extends base
+
+mixin reviewCard(review)
+  .reviews__card 
+    .reviews__avatar 
+      img.reviews__tour-img(src=`/img/tours/${review.tour.imageCover}`)
+      .reviews__user= review.tour.name 
+    .reviews__text= review.review
+    .reviews__rating 
+      each index in [1, 2, 3, 4, 5]
+        svg.reviews__star(class=`reviews__star--${index <= (review.rating) ? 'active' : 'inactive'}`)
+          use(xlink:href='/img/icons.svg#icon-star')
+
+block content 
+  -const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  main.main 
+    .review-container
+      each review in reviews
+        +reviewCard(review)
+
